@@ -1,0 +1,145 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none !important;
+    list-style: none;
+}
+:root{
+    --main: #289E8A;
+    --black: #000000;
+    --white: #ffffff;
+    --grey: #606163;
+}
+html, body{
+    background-color: #f9f9f9 !important;
+}
+@font-face {
+    font-family: mainFont;
+    src: url(../fonts/histeagin.ttf) format('truetype');
+}
+
+/* common  */
+
+h1, h2, h3, h4, h5, h6, a{
+    font-family: mainFont;
+}
+nav{
+    text-align: center;
+}
+nav ul{
+    gap: 20px;
+}
+nav a{
+    font-size: 25px !important;
+    color: var(--grey) !important;
+}
+nav a:hover{
+    color: var(--main) !important;
+}
+p{
+    font-family: mainFont;
+    font-size: 2vw;
+    letter-spacing: 3px;
+}
+span{
+    color: var(--main);
+}
+
+h1{
+    font-size: 8vw;
+    line-height: 8vw;
+}
+.primary-button{
+    padding: 15px 40px;
+    border-radius: 3px;
+    font-size: 30px;
+    font-family: mainFont;
+    background-color: var(--main);
+    color: var(--white) !important;
+}
+.primary-button:hover{
+    font-style: italic;
+    color: var(--white);
+}
+.white-bg{
+    background-color: var(--white);
+}
+.contest-card{
+    background-color: var(--white);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .09);
+    border-radius: 12px;
+   
+}
+.swiper-slide {
+    padding: 30px;
+}
+/* common  */
+  
+#navbar{
+    width: 84%;
+    margin: auto;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#nav-left a{
+    font-family: mainFont;
+    font-size: 20px;
+    color: var(--black);
+    font-weight: 500;
+}
+
+#nav-right .line{
+    width: 30px;
+    height: 1px;
+    margin-top: 5px;
+    background-color: var(--grey);
+}
+
+#hero .heroImg{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 99;
+}
+
+/* slider  */
+.swiper-pagination-bullet {
+    background-color: var(--main) !important;
+}
+.slider-next{
+    background-color: #289E8A;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    color: var(--white);
+}
+.slider-prev{
+    background-color: #289E8A;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    color: var(--white);
+}
+
+input, textarea{
+    font-family: mainFont;
+    font-size: 20px !important;
+    border: none !important;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, .09);
+}
+input:focus, textarea:focus{
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, .09) !important;
+ }
+ #contest a{
+    color: var(--main);
+    font-size: 2vw;
+ }
+ #contest small:first-child{
+    color: var(--main);
+    font-weight: 500;
+ }

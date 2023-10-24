@@ -1,0 +1,12 @@
+{% extends "../base.html" %}
+{% block title %}About | Digital Design War{% endblock title %}
+{% block content %}
+
+{% for data in data %}
+<img src="/media/{{data.banner}}" alt="" class="w-100">
+<div class="container my-5">
+    <h1>{{data.heading}}</h1>
+    <p>{{data.content}}</p>
+</div>
+{% endfor %}
+{% endblock content %}

@@ -1,0 +1,147 @@
+{% extends "../base.html" %}
+{% block title %}Digital Design War{% endblock title %}
+{% block content %}
+
+{% load static %}
+ <!-- hero  -->
+ <div id="hero">
+    <div class="container my-5">
+      <div class="row">
+        <div class="col-md-6 align-self-center">
+          <h1>Unlock Your</h1>
+          <h1><span>Creative</span></h1>
+          <h1>Potential.</h1>
+          <div class="my-4">
+            <a href="#" class="primary-button"> Explore Contest </a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div id="heroImg">
+            <img
+              src="{% static "assets/images/trophy-iso-color.png" %}"
+              class="w-100"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- hero  -->
+  <!-- contest slider  -->
+  <div class="white-bg">
+    <img src="{% static "assets/images/top-wave.svg" %}" class="w-100" alt="" />
+    <div class="container my-5 mt-5">
+      <!-- Swiper -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          {% for banner in banner %}
+          <div class="swiper-slide">
+            <a href="#"
+              ><img
+                src="/media/{{banner.image}}"
+                class="w-100"
+                alt=""
+            /></a>
+          </div>
+          {% endfor %}
+          
+        </div>
+      </div>
+      <div class="d-flex justify-content-center my-3 gap-3">
+        <button class="slider-next">&#8592;</button>
+        <button class="slider-prev">&#8594;</button>
+      </div>
+    </div>
+    <img src="assets/images/bottom-wave.svg" class="w-100" alt="" />
+  </div>
+  <!-- contest slider  -->
+  <!-- about   -->
+  <div id="about">
+    <div class="container my-5 py-5">
+      {% for about in about %}
+      <h1>Who <span>We</span> Are ?</h1>
+      <p class="w-75">
+       {{about.content}}
+      </p>
+      {% endfor %}
+    </div>
+  </div>
+  <!-- about   -->
+  <!-- contenst  -->
+  <div id="contest" class="white-bg">
+    <img src="{% static "assets/images/top-wave.svg" %}" class="w-100" alt="" />
+    <div class="container my-5 py-2">
+      <h1>Contest <span>&#8594;</span></h1>
+        <div class="row py-5">
+           {% for contest in contest %}
+           <div class="col-md-3 p-3 shadow-sm">
+            <img src="/media/{{contest.image}}" class="w-100" alt="">
+            <div class="d-flex justify-content-between py-2">
+                <small>{{contest.status}}</small>
+                <small>Booked Seats : <span><b>{{contest.availble_seat}}</b></span></small>
+            </div>
+            <a href="/contest/{{contest.slug}}" class="text-center"><span>Know More &#8594;</span></a>
+        </div>
+           {% endfor %}
+        </div>
+      </div>
+    <img src="{% static "assets/images/bottom-wave.svg" %}" class="w-100" alt="" />
+  </div>
+  <!-- contenst  -->
+  <!-- testimonial  -->
+  <div id="testimonial">
+    <div class="container my-5">
+      <h1>Testimonial <span>&#8594;</span></h1>
+      <!-- Swiper -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+        {% for testimonial in testimonial %}
+        <div class="swiper-slide">
+            <p class=""><span>"</span>{{testimonial.message}} <span>"</span></p>
+            <h2 class="text-center py-3">- {{testimonial.name}}</h2>
+           </div>
+        {% endfor %}
+         
+        </div>
+      </div>
+      <div class="d-flex justify-content-center my-3 gap-3">
+        <button class="slider-next">&#8592;</button>
+        <button class="slider-prev">&#8594;</button>
+      </div>
+    </div>
+    </div>
+  </div>
+  <!-- testimonial  -->
+  <!-- contact  -->
+  <div id="contact" class="white-bg">
+    <img src="{% static "assets/images/top-wave.svg" %}" class="w-100" alt="">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h1>Contact <span>&#8594;</span></h1>
+        </div>
+        <div class="col-md-6">
+          <form action="">
+            <div class="mb-2">
+              <input type="text" class="form-control" placeholder="Enter Your Name..">
+            </div>
+            <div class="mb-2">
+              <input type="text" class="form-control" placeholder="Email..">
+            </div>
+            <div class="mb-2">
+              <input type="text" class="form-control" placeholder="Phone..">
+            </div>
+            <div class="mb-2">
+              <textarea name="" class="form-control" placeholder="Message.." id="" cols="30" rows="10"></textarea>
+            </div>
+            <div class="mb-2">
+              <input type="submit" class="col-md-12 primary-button border-0">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- contact  -->
+{% endblock content %}

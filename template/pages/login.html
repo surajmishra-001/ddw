@@ -1,0 +1,23 @@
+{% extends "../base.html" %}
+{% block title %}Login | Digital Design War{% endblock title %}
+{% block content %}
+<div class="container my-5">
+    <div class="row justify-content-center py-5">
+        <div class="col-md-6">
+            <form action="" method="post">
+                {%csrf_token%}
+                <div class="mb-2">
+                    <input type="text" class="form-control" placeholder="Email" name="username" id="">
+                </div>
+                <div class="mb-2">
+                    <input type="text" class="form-control" placeholder="Password" name="password" id="">
+                </div>
+                <div class="mb-2">
+                    <input type="submit" class="form-control primary-button" value="Login">
+                </div>
+            </form>
+            <h6>Not Have a Account, <a href="/register"><span>Register</span></a></h6>
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,29 @@
+{% extends "../base.html" %}
+{% block title %}Regiter | Digital Design War{% endblock title %}
+{% block content %}
+<div class="container my-5">
+    <div class="row justify-content-center py-5">
+        <div class="col-md-6">
+            <form action="" method="post">
+                {%csrf_token%}
+                <div class="mb-2">
+                    <input type="text" class="form-control" placeholder="Name" name="name" id="">
+                </div>
+                <div class="mb-2">
+                    <input type="text" class="form-control" placeholder="Email" name="email" id="">
+                </div>
+                <div class="mb-2">
+                    <input type="text" class="form-control" placeholder="Password" name="password" id="">
+                </div>
+                <div class="mb-2">
+                    <input type="password" class="form-control" placeholder="Confirm Password" name="cpassword" id="">
+                </div>
+                <div class="mb-2">
+                    <input type="submit" class="form-control primary-button" value="Register">
+                </div>
+            </form>
+            <h6>Already Have a Account, <a href="/login"><span>Login</span></a></h6>
+        </div>
+    </div>
+</div>
+{% endblock content %}

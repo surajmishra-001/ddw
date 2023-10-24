@@ -1,0 +1,24 @@
+{% extends "../base.html" %}
+{% block title %}Contest | Digital Design War{% endblock title %}
+{% block content %}
+<section id="contest">
+    <div class="container my-3">
+        <h1>All <span>Contest</span></h1>
+        <div class="row py-5">
+            {% for contest in data %}
+            <div class="col-md-3 p-3 shadow-sm">
+             <img src="/media/{{contest.image}}" class="w-100" alt="">
+             <div class="d-flex justify-content-between py-2">
+                 <small>{{contest.status}}</small>
+                 <small>Booked Seats : <span><b>{{contest.availble_seat}}</b></span></small>
+             </div>
+             <div class="my-5 mx-3">
+                <a href="/contest/{{contest.slug}}" class="primary-button text-light">Know More &#8594;</a>
+             </div>
+         </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

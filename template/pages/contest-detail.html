@@ -1,0 +1,94 @@
+{% extends "../base.html" %}
+{% block title %}Contest Detail | Digital Design War{% endblock title %}
+{% block content %}
+<div class="container my-5">
+    <h1><span>Contest</span> Detail</h1>
+    {% if contest.status == 'ended' %}
+     <a href="" class="my-5 primary-button">Join Now</a>
+     {% else %}
+    <div class="col-md-6">
+
+        {% if has_joined %}
+            <!-- Display content for users who have joined the contest -->
+            {% if has_submitted %}
+            <h3>Winner Annoncement on 10th Nov.</h3>
+            {% else %}
+            <form action="" method="post">
+                {%csrf_token%}
+                <div class="mb-2">
+                    <input type="hidden" name="contest-id" value="{{contest.id}}" id="">
+                    <input type="file" class="form-control" name="file">
+                </div>
+                <div class="mb-2">
+                    <input type="submit" class="form-control primary-button">
+                </div>
+            </form>
+            {% endif %}
+        {% else %}
+            <a href="https://wa.me/7523814376?text=I Want to Join Contest" target="_blank" class="my-5 primary-button">Join Now</a>
+        {% endif %}
+  
+         
+    </div>
+     {% endif %}
+    <div class="row py-5 justify-content-center">
+        <h2><span>Task</span></h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi dolores veritatis quo quia minima laboriosam laudantium, asperiores exercitationem expedita a maiores eaque optio, in deserunt, tempore rem animi ullam maxime.</p>
+        <h2 class="py-4"><span>Awards</span></h2>
+       <div class="col-md-6">
+        <table class="table">
+            <tr>
+                <th>Rank</th>
+                <th>Award</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>20,000</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>10,000</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>8,000</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>6,000</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>5,000</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>3,000</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>2,000</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>1,000</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>500</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>200</td>
+            </tr>
+        </table>
+       </div>
+
+       <div class="col-md-6">
+          {% if contest.status == "ended" %}
+          <img src="https://dummyimage.com/1080x1080" class="w-100" alt="">
+          {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock content %}
