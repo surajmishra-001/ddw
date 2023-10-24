@@ -122,18 +122,19 @@
           <h1>Contact <span>&#8594;</span></h1>
         </div>
         <div class="col-md-6">
-          <form action="">
+          <form action="" method="post">
+            {%csrf_token%}
             <div class="mb-2">
-              <input type="text" class="form-control" placeholder="Enter Your Name..">
+              <input type="text" class="form-control" name="name" placeholder="Enter Your Name..">
             </div>
             <div class="mb-2">
-              <input type="text" class="form-control" placeholder="Email..">
+              <input type="text" class="form-control" name="email" placeholder="Email..">
             </div>
             <div class="mb-2">
-              <input type="text" class="form-control" placeholder="Phone..">
+              <input type="text" class="form-control" name="phone" placeholder="Phone..">
             </div>
             <div class="mb-2">
-              <textarea name="" class="form-control" placeholder="Message.." id="" cols="30" rows="10"></textarea>
+              <textarea class="form-control" name="message" placeholder="Message.." id="" cols="30" rows="10"></textarea>
             </div>
             <div class="mb-2">
               <input type="submit" class="col-md-12 primary-button border-0">

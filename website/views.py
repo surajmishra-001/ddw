@@ -3,11 +3,21 @@ from . models import *
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth import authenticate, login as dj_login, logout
+from django.contrib.auth.decorators import login_required
 
 
 
 # Create your views here.
 def index(request):
+    if request.method == "POST":
+        name = request.POST['name']
+        email = request.POST['email']
+        phone = request.POST['phone']
+        message = request.POST['message']
+
+        contact = Contact.objects.create(name=name, email=email, phone=phone, message=message)
+        contact.save()
+        return redirect("/")
     banner = Results_banner.objects.all()
     about = About.objects.all()
     contest = Contest.objects.all()
@@ -37,9 +47,18 @@ def contest(request):
     return render(request, 'pages/contest.html', context)
 
 def contact(request):
+    if request.method == "POST":
+        name = request.POST['name']
+        email = request.POST['email']
+        phone = request.POST['phone']
+        message = request.POST['message']
+
+        contact = Contact.objects.create(name=name, email=email, phone=phone, message=message)
+        contact.save()
+        return redirect("/contact")
     return render(request, 'pages/contact.html')
 
-
+@login_required
 def singleContest(request, slug):
     contest = get_object_or_404(Contest, slug=slug)
     user = request.user
